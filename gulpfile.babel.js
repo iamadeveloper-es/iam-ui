@@ -18,7 +18,7 @@ gulp.task('pug', () => {
       }
   ) )
     
-    .pipe( gulp.dest('./public') )
+    .pipe( gulp.dest('./dist') )
 })
 
 gulp.task('es6', function () { 
@@ -38,7 +38,7 @@ gulp.task('es6', function () {
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(autoprefixer('last 10 version'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./public/css'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(notify("Sass Compiled!"));
 
 });
@@ -53,7 +53,7 @@ gulp.task('watchSass', function () {
     return gulp.src(['./src/js/**/*.js'])
         .pipe(babel({  presets: ['@babel/preset-env']}))
         // .pipe(uglify())
-        .pipe(gulp.dest('./public/js'))
+        .pipe(gulp.dest('./dist/js'))
         .pipe(notify("JS Compiled!"));
 
 });
