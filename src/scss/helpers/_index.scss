@@ -1,0 +1,17 @@
+.bg-img-cover{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.absolute-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.li-dots{
+    list-style: disc;
+    padding-left: 15px;
+}

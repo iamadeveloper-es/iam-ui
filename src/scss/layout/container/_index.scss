@@ -1,0 +1,20 @@
+//- Index que gestiona los estilos relacionados con los containers del Layout
+@import 'mixins/container_modifiers';
+
+.container{
+    @include container-modifiers()
+}
+
+@each $key, $value in $medias{
+    $max-size: calc($value - 40px);
+    @media (min-width: $value){
+        .container{
+
+            @include container-modifiers($max-size);
+        }
+    }
+}
+
+.container-fluid{
+    width: 100%;
+}

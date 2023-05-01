@@ -1,0 +1,24 @@
+.gap{
+    gap: $grid-gutter;
+
+    @each $gutters-key, $gutters-value in $gutters{
+        &--gap-#{$gutters-key}{
+            gap: $gutters-value
+        }
+    }
+}
+
+@each $key, $value in $medias{
+    
+    @media (min-width: $value){
+        .gap-#{$key}{
+            gap: $grid-gutter;
+
+            @each $gutters-key, $gutters-value in $gutters{
+                &--gap-#{$gutters-key}{
+                    gap: $gutters-value
+                }
+            }
+        }
+    }
+}

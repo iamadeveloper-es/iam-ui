@@ -1,0 +1,28 @@
+.p{
+
+    @each $key, $value in $spacing{
+        @each $spacing-key, $spacing-value in $value{
+
+            &-#{$key}--#{$spacing-key}{
+                padding-#{$key}: $spacing-value
+            }
+        }
+    }
+}
+
+@each $key, $value in $medias{
+    $media-key : $key;
+    @media (min-width: $value){
+        .p{
+
+            @each $key, $value in $spacing{
+                @each $spacing-key, $spacing-value in $value{
+        
+                    &-#{$key}-#{$media-key}--#{$spacing-key}{
+                        padding-#{$key}: $spacing-value
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+$grid-gutter: 1rem;
+$gutters: (
+  0: 0,
+  1: $grid-gutter + .25,
+  2: $grid-gutter + .50,
+  3: $grid-gutter + .75,
+  4: $grid-gutter + 1,
+  5: $grid-gutter + 2,
+);
+
+$spacing : (
+  'top': $gutters,
+  'right': $gutters,
+  'bottom': $gutters,
+  'left': $gutters,
+);

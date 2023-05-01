@@ -1,3 +1,15 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-}
+@import 'functions/get-vars';
+@import 'abstract/variables/custom-properties';
+@import 'abstract/variables/common';
+@import 'abstract/variables/breakpoints';
+@import 'abstract/variables/gutters';
+@import 'globals/reset';
+@import 'globals/style-reset';
+@import 'globals/common';
+@import 'layout/container/index';
+@import 'layout/flex/index';
+@import 'layout/grid/index';
+@import 'layout/gutters/gap';
+@import 'layout/gutters/margin';
+@import 'layout/gutters/padding';
+@import 'helpers/index';

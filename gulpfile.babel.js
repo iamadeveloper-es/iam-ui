@@ -34,7 +34,7 @@ gulp.task('es6', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.init())
         // .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(sourcemaps.write({ includeContent: true }))
+        .pipe(sourcemaps.write({ includeContent: false }))
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(autoprefixer('last 10 version'))
         .pipe(sourcemaps.write('.'))

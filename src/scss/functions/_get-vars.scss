@@ -1,0 +1,3 @@
+@function customVar($name) {
+    @return var(--#{$name});
+}

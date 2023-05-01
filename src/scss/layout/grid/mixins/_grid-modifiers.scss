@@ -1,0 +1,20 @@
+
+@mixin grid-modifiers($base-columns: $grid-base){
+    $columns: map-get($base-columns, 'columns');
+    $rows: map-get($base-columns, 'rows');
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
+    gap: $grid-gutter;
+
+    &--#{$columns}{
+        display: grid;
+        grid-template-columns: repeat($columns, 1fr);
+        gap: $grid-gutter;
+    }
+
+    &--rows-#{$rows}{
+        // grid-template-rows: minmax(100px, max-content) repeat(auto-fill, 200px) 20%;
+        grid-template-rows: minmax(100px, max-content) repeat(auto-fill, 200px) 20%;
+    }
+};

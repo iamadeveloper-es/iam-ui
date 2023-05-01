@@ -1,0 +1,7 @@
+//- Mixin que aglutina los modificadores para los containers
+@mixin container-modifiers($size: 95%){
+    width: var(--container-size);
+    max-width: $size;
+    margin-left: auto;
+    margin-right: auto;
+}

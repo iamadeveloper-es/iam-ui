@@ -1,0 +1,52 @@
+// - Mixin encargado de generar modificadores de elementos de tipo Grid child
+
+@mixin grid-child-modifiers($breakpoint: null, $base-columns: $grid-base){
+    $columns: map-get($base-columns, 'columns');
+    $rows: map-get($base-columns, 'rows');
+
+    &--self-start{
+        align-self: flex-start;
+    }
+
+    &--self-end{
+        align-self: flex-end;
+    }
+
+    &--self-center{
+        align-self: center;
+    }
+
+    //- Columnas
+    @for $start from 1 through $columns {
+        @for $end from 1 through $columns {
+            @if $start < $end{
+                &--#{$start}-#{$end}{
+                    grid-column: #{$start} / #{$end};
+                }
+            }
+        }
+
+        @if $start < $columns {
+            &--#{$start}-end{
+                grid-column: #{$start} / -1;
+            }
+        }
+    }
+
+    //- Filas
+    @for $start from 1 through $rows {
+        @for $end from 1 through $rows {
+            @if $start < $end{
+                &--row-#{$start}-#{$end}{
+                    grid-row: #{$start} / #{$end};
+                }
+            }
+        }
+
+        @if $start < $rows {
+            &--row-#{$start}-end{
+                grid-row: #{$start} / -1;
+            }
+        }
+    }
+};

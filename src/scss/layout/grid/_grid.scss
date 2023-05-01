@@ -1,0 +1,14 @@
+@import 'mixins/grid-modifiers';
+
+.grid{
+    @include grid-modifiers();
+}
+
+@each $key, $value in $medias{
+    
+    @media (min-width: $value){
+        .grid-#{$key}{
+            @include grid-modifiers();
+        }
+    }
+}

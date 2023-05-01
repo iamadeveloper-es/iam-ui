@@ -1,0 +1,16 @@
+//- Clases para gestionar Layouts con flex
+@import 'mixins/flex-modifiers';
+
+.flex{
+    
+    @include flex-modifiers;
+}
+
+@each $key, $value in $medias{
+    
+    @media (min-width: $value){
+        .flex-#{$key}{
+            @include flex-modifiers;
+        }
+    }
+}
