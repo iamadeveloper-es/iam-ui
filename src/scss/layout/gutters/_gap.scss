@@ -2,7 +2,7 @@
     gap: $grid-gutter;
 
     @each $gutters-key, $gutters-value in $gutters{
-        &--gap-#{$gutters-key}{
+        &--#{$gutters-key}{
             gap: $gutters-value
         }
     }
@@ -15,7 +15,7 @@
             gap: $grid-gutter;
 
             @each $gutters-key, $gutters-value in $gutters{
-                &--gap-#{$gutters-key}{
+                &--#{$gutters-key}{
                     gap: $gutters-value
                 }
             }
